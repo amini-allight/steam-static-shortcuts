@@ -14,7 +14,7 @@ In short: if you want an automated solution you should keep using Steam ROM Mana
 
 ## Platform Support
 
-This application only does basic file I/O operations and should work on any operating system, although by default it assumes a Linux-style Steam install and the instructions are written assuming a Linux operating system.
+This application only does basic file I/O operations and should work on any operating system, although by default it assumes a Linux-style Steam install and the instructions are written assuming a Linux operating system. Only a Linux binary is provided.
 
 ## Dependencies
 
@@ -107,7 +107,7 @@ Once the `config` directory has been filled with all your required files you can
 - `STEAM_USER_ID`: This environment variable is mandatory. This is (one of the phrasings of) your Steam user ID. You can use [Steam ID Finder](https://www.steamidfinder.com/) to find out yours, where it's the long number inside the square brackets in the `steamID3` field. Alternatively you can also find this by going into your Steam directory and going to the `userdata` directory. There will be a directory inside named after your steam ID (possibly multiple if you have multiple logins).
 - `STEAM_INSTALL_PATH`: This environment variable is optional. If set this will be interpreted as the path to the root of the Steam installation directory. If omitted it will default to `~/.local/share/Steam`.
 
-Then close Steam and you invoke the application like so, passing in the path to your configuration directory as the first and only argument:
+Then close Steam and invoke the application like so, passing in the path to your configuration directory as the first and only argument:
 
 ```sh
 export STEAM_USER_ID=1234567890
@@ -123,7 +123,7 @@ export STEAM_INSTALL_PATH=/opt/steam
 ./SteamStaticShortcuts.AppImage /home/user/Documents/config
 ```
 
-If you want to use the image conversion feature as described above supply the special `convert-images` argument:
+If you want to use the image conversion feature mentioned above supply the special `convert-images` argument:
 
 ```sh
 export STEAM_USER_ID=1234567890
@@ -131,7 +131,7 @@ export STEAM_INSTALL_PATH=/opt/steam
 ./steam-static-shortcuts /home/user/Documents/config convert-images
 ```
 
-Once you've run the application open Steam again and your games should have been added.
+Once the application has finished open Steam again and your games should have been added.
 
 You can re-run the application at any time as you add new games or modify existing ones. Updated entries are paired up with existing Steam shortcuts by their names. For example if you have a game called "Minetest" and you change the launch command, it will update the shortcut in Steam also called "Minetest". If you change the name to "Testmine" it will create a new entry on Steam called "Testmine" and you will need to manually delete the old "Minetest" entry in Steam if you don't want it anymore. Images associated with updated shortcuts will be overwritten by the new versions from the configuration directory, where applicable.
 
