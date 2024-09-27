@@ -1,6 +1,6 @@
 # Steam Static Shortcuts
 
-An application that adds non-Steam games to Steam based on a local configuration folder. Written in C++17.
+An application that adds non-Steam games to Steam based on a local configuration folder. Written in C++20.
 
 ## Why?
 
