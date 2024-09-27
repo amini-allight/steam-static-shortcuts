@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>org.steamstaticshortcuts.steamstaticshortcuts.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-or-later</project_license>
+    <name>Steam Static Shortcuts</name>
+    <summary>Steam shortcuts generator</summary>
+    <description>
+        <p>
+            Command-line utility that adds custom shortcuts to Steam based on a configuration folder.
+        </p>
+    </description>
+    <launchable type="desktop-id">steam-static-shortcuts.desktop</launchable>
+    <screenshots>
+    </screenshots>
+    <keywords>
+        <keyword>steam</keyword>
+    </keywords>
+    <url type="homepage">https://github.com/amini-allight/steam-static-shortcuts</url>
+    <url type="bugtracker">https://github.com/amini-allight/steam-static-shortcuts/issues</url>
+    <provides>
+        <binary>steam-static-shortcuts</binary>
+    </provides>
+    <developer id="amini.allight">
+        <name>Amini Allight</name>
+    </developer>
+    <update_contact>amini.allight@protonmail.com</update_contact>
+    <releases>
+        <release date="2024-09-26" version="1.0.0"/>
+    </releases>
+    <content_rating type="oars-1.1"/>
+</component>
