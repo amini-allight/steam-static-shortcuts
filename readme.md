@@ -58,19 +58,23 @@ config/
     games.yml
     art/
         hero/
-            minetest.png
+            luanti.png
             the-battle-for-wesnoth.png
             xonotic.png
         grid/
-            minetest.png
+            luanti.png
+            the-battle-for-wesnoth.png
+            xonotic.png
+        wide/
+            luanti.png
             the-battle-for-wesnoth.png
             xonotic.png
         icon/
-            minetest.png
+            luanti.png
             the-battle-for-wesnoth.png
             xonotic.png
         logo/
-            minetest.png
+            luanti.png
             the-battle-for-wesnoth.png
             xonotic.png
 ```
@@ -79,6 +83,7 @@ The names are **case-sensitive** and the directory names (as well as the name of
 
 - **Icon:** This is the small icon seen in the game list on the left-hand side of the Steam library.
 - **Grid:** This is the large portrait aspect-ratio image displayed in the grid in the center of the Steam library.
+- **Wide:** This is the large landscape aspect-ratio image displayed for the most recently played game in the grid in the center of the Steam library.
 - **Hero:** This is the wide landscape aspect-ratio banner image displayed at the top of the Steam library when the game is selected.
 - **Logo:** This is the game's logo on a transparent background. This is displayed floating on top of the hero image at the top of the Steam library when the game is selected.
 
@@ -87,10 +92,10 @@ The images should be supplied as `.png` with a lowercase extension. If you have 
 Once the images have been provided the only other thing that's required is an entry describing your game in `games.yml`. The format of this entry is as follows:
 
 ```yml
-- id: "minetest"
-  name: "Minetest"
+- id: "luanti"
+  name: "Luanti"
   command:
-    - "/usr/bin/minetest"
+    - "/usr/bin/luanti"
     - "--quiet"
   workingDirectory: "/home/user"
 ```
@@ -101,6 +106,20 @@ The fields are as follows:
 - `name`: This field is mandatory. This is the display name of the game as seen inside Steam.
 - `command`: This field is mandatory. This is the command to run when the game is launched. This is a list of strings and must always contain at least one string: the path to the executable. Further strings will be interpreted as arguments to be passed to this executable.
 - `workingDirectory`: This field is optional. This is the directory the game runs in. If omitted it will default to the value of the `HOME` environment variable e.g. the user's home directory.
+
+If you wish to override the art of an official Steam game (i.e. a game acquired from the Steam store, rather than a custom shortcut) you can define a different kind of entry, the format of which is as follows:
+
+```yml
+- id: "half-life-2"
+  appId: 220
+```
+
+The fields are as follows:
+
+- `id`: This field is mandatory. As above this is a simplified version of the game's name chosen by the user which is used to identify which images to use.
+- `appId`: This field is mandatory. This is the Steam app ID for the game whose images you wish to override. You can find a game's app ID by searching for the game on [SteamDB](https://steamdb.info/).
+
+Note that when overriding the **logo** image for a game that did not originally have a logo (because it was last updated on Steam prior to their introduction) the logo may not appear within the Steam UI because it has no defined position within the hero banner. You can fix this by selecting the game in your Steam library, right-clicking on the hero banner and selecting "Adjust Logo Position", slightly moving or resizing the logo that appears, and then clicking "Done".
 
 Once the `config` directory has been filled with all your required files you can run the application. To do this you might have to set some environment variables. The two important environment variables are:
 

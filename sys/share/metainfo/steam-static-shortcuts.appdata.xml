@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-    <id>org.steamstaticshortcuts.steamstaticshortcuts.desktop</id>
+    <id>org.steam-static-shortcuts.steam-static-shortcuts.desktop</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0-or-later</project_license>
     <name>Steam Static Shortcuts</name>
@@ -10,7 +10,7 @@
             Command-line utility that adds custom shortcuts to Steam based on a configuration folder.
         </p>
     </description>
-    <launchable type="desktop-id">steam-static-shortcuts.desktop</launchable>
+    <launchable type="desktop-id">org.steam-static-shortcuts.steam-static-shortcuts.desktop</launchable>
     <screenshots>
     </screenshots>
     <keywords>
@@ -27,6 +27,7 @@
     <update_contact>amini.allight@protonmail.com</update_contact>
     <releases>
         <release date="2024-09-27" version="1.0.0"/>
+        <release date="2026-02-20" version="1.0.1"/>
     </releases>
     <content_rating type="oars-1.1"/>
 </component>

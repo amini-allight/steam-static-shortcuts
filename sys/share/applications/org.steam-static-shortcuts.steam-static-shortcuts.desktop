@@ -2,9 +2,9 @@
 Type=Application
 Version=1.0
 Name=Steam Static Shortcuts
-GenericName=Steam Shortcuts Generator
+GenericName=Steam Shortcut Generator
 Comment=Adds custom shortcuts to Steam based on a configuration folder
-Icon=steam-static-shortcuts
+Icon=org.steam-static-shortcuts.steam-static-shortcuts
 Exec=steam-static-shortcuts %f
 Terminal=true
 MimeType=inode/directory

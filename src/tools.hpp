@@ -54,6 +54,11 @@ static string gridInputPath(const string& configPath, const string& id)
     return filesystem::absolute(configPath).string() + "/" + gridPath + "/" + id + ".png";
 }
 
+static string wideInputPath(const string& configPath, const string& id)
+{
+    return filesystem::absolute(configPath).string() + "/" + widePath + "/" + id + ".png";
+}
+
 static string logoInputPath(const string& configPath, const string& id)
 {
     return filesystem::absolute(configPath).string() + "/" + logoPath + "/" + id + ".png";
@@ -72,6 +77,11 @@ static string logoOutputPath(unsigned appId)
 static string gridOutputPath(unsigned appId)
 {
     return steamConfigPath() + "/grid/" + to_string(appId) + "p.png";
+}
+
+static string wideOutputPath(unsigned appId)
+{
+    return steamConfigPath() + "/grid/" + to_string(appId) + ".png";
 }
 
 template<typename... Args>

@@ -1,0 +1,21 @@
+.TH man 1 "20 Feb 2026" "1.0.1" "steam-static-shortcuts man page"
+.SH NAME
+steam-static-shortcuts \- A generator for custom Steam shortcuts.
+.SH SYNOPSIS
+steam-static-shortcuts config-path [convert-images]
+.SH DESCRIPTION
+Steam Static Shortcuts is a generator for custom Steam shortcuts.
+.SH OPTIONS
+The first argument will be interpreted as a path to a directory containing a games.yml file detailing shortcuts to add and existing games to update and a directory structure containing the library art to use. Full details of this structure can be found in the project readme.
+
+The second argument is optional, if it matches "convert-images" the program will accept non-PNG images being present in the configuration directory and use ImageMagick to convert them to PNG prior to use. ImageMagick must be available on your system path for this option to work.
+.SH BUGS
+Please report all bugs at https://github.com/amini-allight/steam-static-shortcuts/issues
+.SH WWW
+https://github.com/amini-allight/steam-static-shortcuts
+.SH AUTHOR
+Amini Allight <amini.allight@protonmail.com>
+.SH COPYRIGHT
+Copyright (C) 2026 Amini Allight
+
+Steam Static Shortcuts is free software; you can redistribute it and/or modify it under the terms of the GPL version 3 or later.

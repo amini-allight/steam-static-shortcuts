@@ -54,6 +54,7 @@ int main(int argc, char** argv)
         convertImageFormats(configPath + "/" + gridPath);
         convertImageFormats(configPath + "/" + logoPath);
         convertImageFormats(configPath + "/" + iconPath);
+        convertImageFormats(configPath + "/" + widePath);
     }
 
     YAML::Node root = YAML::LoadFile(configPath + "/" + definitionsPath);
@@ -89,6 +90,13 @@ int main(int argc, char** argv)
 
     for (const Game& game : games)
     {
+        if (game.reskin())
+        {
+            cout << "updating official app '" << game.appId << "' with artwork labeled '" << game.id << "'" << endl;
+            gameIdToAppId[game.id] = game.appId;
+            continue;
+        }
+
         bool foundExisting = false;
 
         for (auto& [ index, shortcut ] : file.shortcuts)
@@ -138,6 +146,15 @@ int main(int argc, char** argv)
         else
         {
             cerr << "grid for '" << gameId << "' is missing" << endl;
+        }
+
+        if (string path = wideInputPath(configPath, gameId); filesystem::exists(path))
+        {
+            filesystem::copy(path, wideOutputPath(appId), filesystem::copy_options::overwrite_existing);
+        }
+        else
+        {
+            cerr << "wide for '" << gameId << "' is missing" << endl;
         }
 
         if (string path = logoInputPath(configPath, gameId); filesystem::exists(path))
